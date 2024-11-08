@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+
+    <!-- Enlace de la fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Aplicar la fuente a todo el contenido */
+        body {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Mantener el mismo estilo de fuente en etiquetas específicas */
+        h1, label, button, input, textarea, select, p {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-editor">
+        <div class="header">
+            <h1>Editar perfil</h1>
+        </div>
+        <div class="profile-picture">
+            <div class="foto-de-perfil">
+                <img id="profilePic" src="./img/amados.jpg" alt="foto de perfil">
+            </div>
+            <input type="file" id="profilePicInput" accept="image/*">
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" value="">
+            </div>
+            <div class="form-group">
+                <label for="username">Nombre de usuario</label>
+                <input type="text" id="username" value="">
+            </div>
+            <div class="form-group">
+                <label for="pronouns">Pronombres</label>
+                <input type="text" id="pronouns" placeholder="Pronombres">
+            </div>
+            <div class="form-group">
+                <label for="bio">Presentación</label>
+                <textarea id="bio"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="gender">Sexo</label>
+                <select id="gender">
+                    <option>Prefiero no decirlo</option>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="music">genero de tu music</label>
+                <input type="text" id="music" placeholder="escribe el genero de tu music xd">
+            </div>
+            <button type="button" id="saveChanges">Guardar</button>
+        </form>
+    </div>
+    
+    <script>
+        // Cargar imagen de perfil desde localStorage si existe
+        window.onload = function() {
+            const storedProfilePic = localStorage.getItem('profilePic');
+            if (storedProfilePic) {
+                document.getElementById('profilePic').src = storedProfilePic;
+            }
+        };
+
+        // Evento para cambiar la imagen de perfil al seleccionar un archivo
+        document.getElementById('profilePicInput').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePic').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('saveChanges').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const username = document.getElementById('username').value;
+            const pronouns = document.getElementById('pronouns').value;
+            const bio = document.getElementById('bio').value;
+            const gender = document.getElementById('gender').value;
+            const music = document.getElementById('music').value;
+            const profilePic = document.getElementById('profilePicInput').files[0];
+
+            // Guarda los datos en localStorage
+            localStorage.setItem('name', name);
+            localStorage.setItem('username', username);
+            localStorage.setItem('pronouns', pronouns);
+            localStorage.setItem('bio', bio);
+            localStorage.setItem('gender', gender);
+            localStorage.setItem('music', music);
+            if (profilePic) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('profilePic', e.target.result);
+                    // Redirigir a la página principal después de guardar
+                    window.location.href = './perfil.html';
+                };
+                reader.readAsDataURL(profilePic);
+            } else {
+                // Redirigir a la página principal si no hay nueva foto
+                window.location.href = './perfil.html';
+            }
+        });
+    </script>
+</body>
+</html>

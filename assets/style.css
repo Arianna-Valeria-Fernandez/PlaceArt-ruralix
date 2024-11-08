@@ -1,0 +1,118 @@
+
+
+.carousel-item.active {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+body{
+    background-image: url('./img/noche-estreyada.webp'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 25px;
+
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.5); /* Blanco con 50% de opacidad */
+}
+
+img{
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+}
+
+.carousel-image {
+    height: 600px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+}
+
+
+/*modal*/
+
+.modal-content {
+    background-color: rgba(215, 246, 255, 0.712); /* Fondo negro con 80% de opacidad */
+    color: rgb(49, 2, 68); /* Color del texto en el modal */
+}
+
+.modal-header, .modal-footer {
+    border-color: rgba(25, 3, 61, 0.226); /* Borde sutil en blanco */
+}
+
+.modal-body input {
+    background-color: #ddfff8; /* Color de fondo de los inputs */
+    color: black; /* Color del texto en los inputs */
+}
+
+.modal-body input::placeholder {
+    color: rgb(41, 39, 58); /* Color del texto del placeholder */
+}
+
+.btn-black {
+    border: 2px black;
+    background-color: rgb(221, 109, 57); /* Fondo negro para los botones */
+    color: rgb(255, 255, 255); /* Color del texto de los botones */
+}
+
+/*baner*/
+
+.banner {
+    width: 100%; /* Ancho del banner */
+    height: 100px; /* Altura del banner */
+    background-color: #000; /* Color de fondo negro */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.banner img {
+    max-height: 100%; /* Asegura que la imagen no sobresalga del banner */
+    max-width: 100%; /* Asegura que la imagen no sobresalga del banner */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+/*carrusel*/
+
+.carousel-dark {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con 70% de opacidad */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Bordes blancos con un poco de transparencia */
+    position: relative; /* Para que el marco se posicione absolutamente dentro de este contenedor */
+}
+
+
+/*registrado*/
+label {
+    display: block; /* Asegura que el label ocupe toda la línea */
+    text-align: center; /* Centra el texto */
+}
+
+
+
+.text-border {
+
+    color: white; /* Color del texto */
+    text-shadow: 
+        -1px 2px 0 black,  
+         1px 2px 0 black,
+        2px 1px 0 black,
+         1px 1px 0 black; /* Sombra para simular borde */
+}
+
+.form-control{
+    font-size: 25px;
+}
+
+.btn{
+    font-size: 25px;
+}

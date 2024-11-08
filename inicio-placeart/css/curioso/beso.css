@@ -1,0 +1,320 @@
+/* Estilos generales */
+body {
+  font-family: "MedievalSharp", cursive;
+  font-weight: 400;
+  font-style: normal;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(255, 251, 0),rgb(209, 195, 3),rgb(221, 97, 26),rgb(255, 230, 0),rgb(161, 119, 3));
+    line-height: 1.6;
+}
+
+.logo{
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+}
+
+@media (max-width: 600px) {
+  body {
+      background-color: lightblue;
+  }
+}
+
+
+
+.banner {
+  position: fixed; /* Para que siempre esté en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.footer {
+  position: fixed; /* Para que siempre esté en la parte inferior */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+
+
+.profile-container {
+  position: relative; /* Necesario para posicionar la lista absolutamente */
+}
+
+
+.profile-options {
+  list-style-type: none; /* Quitar viñetas */
+  padding: 0; /* Quitar padding */
+  margin: 0; /* Quitar margen */
+  display: none; /* Ocultar por defecto */
+  position: absolute; /* Posicionar la lista absolutamente */
+  right: 0; /* Alinear a la derecha del contenedor */
+  background-color: white; /* Color de fondo */
+  border: 1px solid #ccc; /* Borde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+.profile-options li a {
+  text-decoration: none; /* Quitar subrayado */
+  color: #333; /* Color del texto */
+}
+
+
+
+
+
+
+
+
+.banner {
+  position: fixed; /* Para que siempre esté en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.footer {
+  position: fixed; /* Para que siempre esté en la parte inferior */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sección de la imagen y el texto */
+.main-content {
+    flex: 1;
+    max-width: 70%;
+    padding: 20px;
+}
+
+.image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.text {
+    padding: 10px 0;
+}
+
+/* Sección lateral para el autor */
+.author {
+    flex: 1;
+    max-width: 30%;
+    padding: 20px;
+}
+
+.author-box {
+    background-color: #ffffff3d;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.author-image {
+    width:300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+}
+
+.author p {
+    margin: 10px 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .main-content {
+        max-width: 100%;
+    }
+
+    .author {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+  /* Footer con botones de iconos */
+  .footer {
+    display: flex;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Asegura que el footer esté sobre el contenido */
+    margin: 0; /* Sin márgenes para que estén pegados */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  .footer-btn {
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+  }
+  
+  .footer-btn i {
+    margin-right: 5px;
+  }
+  
+  .footer-btn:hover {
+    background-color:#444;
+  }
+  
+  /* Añadimos margen inferior al contenido para evitar que el footer lo tape */
+  .main-content {
+    padding-bottom: 60px;
+  }
+  
+
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .profile-button {
+    position: relative;
+  }
+  
+  
+  
+
+  .banner {
+    background-color: #ffffff; /* Fondo verde */
+    color: rgb(0, 0, 0); /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex;
+    justify-content: space-between; /* Para separar el logo y el botón */
+    align-items: center; /* Centrar verticalmente */
+    position: fixed; /* Fijar en la parte superior */
+    width: 100%; /* Ancho completo */
+    top: 0;
+    z-index: 1000; /* Asegurarse de que esté por encima del contenido */
+  }
+  .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limitar el ancho */
+    margin: 0 auto; /* Centrar en la pantalla */
+  }
+
+  
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px; /* Ajusta según necesites */
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Oculto por defecto */
+    border-radius: 5px;
+  }
+  
+  .profile-options li {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .profile-options li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  .profile-options li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .profile-options.active {
+    display: block; /* Mostrar cuando se active */
+  }
+
+
+  /*banner img*/
+
+.banner {
+  display: flex; /* Permite que los elementos estén uno al lado del otro */
+  align-items: center; /* Centra verticalmente */
+  width: 100%; /* Asegura que el banner ocupe todo el ancho */
+}
+
+.banner-logo {
+  width: 23%; /* Ocupa la mitad del ancho del banner */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.profile-container {
+  display: flex; /* Para alinear la imagen y la lista */
+  align-items: center; /* Centra verticalmente */
+  margin-left: auto; /* Empuja este contenedor hacia la derecha */
+}
+
+.profile-image {
+  width: 50px; /* Tamaño de la imagen de perfil */
+  height: auto; /* Mantiene la proporción */
+  margin-left: 20px; /* Espaciado a la izquierda */
+}

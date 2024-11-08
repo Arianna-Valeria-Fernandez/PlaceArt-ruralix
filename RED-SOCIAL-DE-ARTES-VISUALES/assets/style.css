@@ -1,0 +1,188 @@
+.banner {
+    background-color: #ffffff; /* Fondo verde */
+    color: rgb(0, 0, 0); /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex;
+    justify-content: space-between; /* Para separar el logo y el botón */
+    align-items: center; /* Centrar verticalmente */
+    position: fixed; /* Fijar en la parte superior */
+    width: 100%; /* Ancho completo */
+    top: 0;
+    z-index: 1000; /* Asegurarse de que esté por encima del contenido */
+  }
+  .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limitar el ancho */
+    margin: 0 auto; /* Centrar en la pantalla */
+  }
+
+.banner {
+    display: flex; /* Permite que los elementos estén uno al lado del otro */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Asegura que el banner ocupe todo el ancho */
+  }
+  
+  .banner-logo {
+    width: 23%; /* Ocupa la mitad del ancho del banner */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+  .profile-container {
+    display: flex; /* Para alinear la imagen y la lista */
+    align-items: center; /* Centra verticalmente */
+    margin-left: auto; /* Empuja este contenedor hacia la derecha */
+  }
+  
+  .profile-image {
+    width: 50px; /* Tamaño de la imagen de perfil */
+    height: auto; /* Mantiene la proporción */
+    margin-left: 20px; /* Espaciado a la izquierda */
+  }
+
+
+
+
+
+
+
+  
+/* Asegúrate de que se muestre al usar Bootstrap */
+.dropdown-menu.show {
+  display: block; /* Bootstrap maneja esto */
+}
+
+
+.banner-logo {
+  width: 23%; /* Ocupa la mitad del ancho del banner */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.profile-container {
+  display: flex; /* Para alinear la imagen y la lista */
+  align-items: center; /* Centra verticalmente */
+  margin-left: auto; /* Empuja este contenedor hacia la derecha */
+}
+
+.profile-image {
+  width: 50px; /* Tamaño de la imagen de perfil */
+  height: auto; /* Mantiene la proporción */
+  margin-left: 20px; /* Espaciado a la izquierda */
+}
+
+
+
+
+
+#nueva-publicacion {
+  margin-bottom: 70px; /* Aumenta el margen para que no toque los botones */
+}
+
+#feed {
+  margin-bottom: 70px; /* Aumenta el margen para que no toque los botones */
+}
+
+
+
+
+.custom-btn {
+  width: 50px; /* Tamaño de los botones */
+  height: 50px; /* Tamaño de los botones */
+  padding: 0; /* Elimina el padding */
+  display: flex; /* Centra la imagen */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.custom-btn img {
+  max-width: 100%; /* Mantiene la imagen dentro del botón */
+  max-height: 100%; /* Mantiene la imagen dentro del botón */
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+.comentario {
+  margin-bottom: 10px; /* Espacio entre comentarios */
+  border: 1px solid #000000a4; /* Bordes para separar */
+  padding: 10px; /* Espacio interno */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #ffffff96; /* Fondo claro */
+
+  
+}
+
+.texto-publicacion,
+.texto-comentario {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ver-mas-btn,
+.ver-mas-comentario-btn {
+  cursor: pointer;
+  color: rgb(7, 7, 8); /* O cualquier color que prefieras */
+  text-decoration: underline;
+}
+
+
+.publicacion {
+  max-width: 100%; /* Limita el ancho del contenedor */
+  word-wrap: break-word; /* Permite que las palabras se dividan en varias líneas */
+  overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.descripcion {
+  text-align: left; /* Alinea el texto a la izquierda */
+  
+}
+
+
+.comentario {
+  margin-bottom: 15px; /* Espacio entre cada comentario */
+  display: flex; /* Para alinear el texto y los botones en una línea */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacio entre el texto y los botones */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+  font-size: 20px;
+  
+}
+
+.comentario span {
+  flex: 1; /* Permite que el texto ocupe el espacio restante */
+  margin-right: 10px; /* Espacio entre el texto y los botones */
+  overflow-wrap: break-word; /* Permite que el texto largo se rompa */
+  text-align: left; /* Alinea el texto a la izquierda */
+  max-width: 75%; /* Limita el ancho del texto */
+}
+
+.comentario div {
+  display: flex; /* Alinea los botones en una fila */
+  margin-left: auto; /* Empuja los botones hacia la derecha */
+  align-items: center; /* Centra los botones verticalmente */
+  width: 100px; /* Ancho fijo para el contenedor de botones */
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+
+}
+
+.me-gusta-comentario-btn,
+.no-me-gusta-comentario-btn {
+  margin-left: 10px; /* Espacio entre los botones */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

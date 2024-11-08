@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Social DE ARTES ECENICAS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styl.css">
+    <script type="module" src="./assets/script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+</head>
+
+<link rel="stylesheet" href="stiles.css"> <!-- Cambia 'styles.css' si es necesario -->
+
+   <!-- Banner en la parte superior -->
+   <header class="banner">
+    <div class="banner-content">
+      <!-- Imagen del logo que ocupa la mitad del ancho -->
+      <img src="./assets/img/PLACE-ART-LOGGIIII.jpeg" alt="Logo" class="banner-logo">
+      
+      <div class="profile-container dropdown">
+        <img src="https://img.icons8.com/ios-filled/50/test-account.png" alt="Imagen de perfil" class="profile-image dropdown-toggle" id="profileImage" data-bs-toggle="dropdown" aria-expanded="false">
+        <ul id="profileOptions" class="dropdown-menu">
+            <li><a class="dropdown-item" href="../PERFILPLACEART/perfil.html">Ver perfil</a></li>
+            <li><a class="dropdown-item" href="../inicio-placeart/ranking-placeart/index.html">Rankings</a></li>
+            <li><a class="dropdown-item" href="../index.html">Cerrar sesión</a></li>
+        </ul>
+    </div>
+    
+    </div>
+  </header>
+
+
+
+  <br><br><br><br>
+<div class="container">
+    <main>
+        <section id="nueva-publicacion" class="mb-4 mt-4"> <!-- Añadido margin-top -->
+
+
+            <div class="recuadro">
+                <h2 class="title1">Bienvenidos a Artes Escénicas</h2>
+                
+            </div>
+
+        
+
+            <textarea id="publicacion-texto" class="form-control mb-2"
+                placeholder="Escribe tu publicación..."></textarea>
+            <input type="file" id="media-input" class="form-control mb-2" accept="image/*,video/*">
+            <button id="publicar-btn" class="btn btn-primary">Publicar</button>
+            <div id="media-preview" class="media-preview"></div>
+        </section>
+
+        <section id="feed">
+
+
+            <div class="recuadro">
+                <h4> Feed de Publicaciones</h4>
+            </div>
+
+
+            <div id="publicaciones-lista" class="mb-4"></div>
+        </section>
+    </main>
+
+
+
+    <div id="modal-comentario" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h5 class="modal-title">Escribe tu comentario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="comentario-textarea" class="form-control"
+                        placeholder="Escribe tu comentario..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button id="enviar-comentario-btn" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<footer class="footer">
+
+    <button class="footer-btn"><a href="../RED-SOCIAL-DE-ARTES-VISUALES/index.html">
+        <img width="50" height="50" src="https://img.icons8.com/color/48/paint-palette-with-brush.png"
+            alt="paint-palette-with-brush" />
+    </a></button>
+
+
+    <button class="footer-btn"><a href="../inicio-placeart/html/prueba.html">
+        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/home.png" alt="quill-with-ink"></a>
+    </button>
+
+
+    <button class="footer-btn"><a href="../RED-SOCIAL-DE-ARTES-LITERARIAS/index.html">
+        <img width="50" height="50" src="https://img.icons8.com/ink/48/quill-with-ink.png"
+            alt="musical-notes" />
+    </a></button>
+
+
+
+    <button class="footer-btn"> <a href="../RED-SOCIAL-DE-ARTES-MUSICALES/index.html">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/musical-notes.png"
+                alt="musical-notes"></a>
+    </button>
+
+
+
+</footer>
+
+
+<br>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

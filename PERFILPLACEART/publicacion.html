@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfil.css">
+    <title>Subir Publicación</title>
+     <!-- Enlace de la fuente de Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+ 
+     <style>
+         /* Aplica la fuente Dancing Script a todo el cuerpo de la página */
+         body {
+             font-family: 'Dancing Script', cursive;
+         }
+ 
+         /* Asegúrate de que botones y otros elementos mantengan la misma fuente */
+         button, textarea, input, label, h1, p {
+             font-family: 'Dancing Script', cursive;
+         }
+ 
+         /* Estilos de ejemplo */
+         #uploadForm label {
+             font-size: 1.2em;
+         }
+ 
+         button {
+             font-size: 1em;
+             padding: 8px 12px;
+             cursor: pointer;
+         }
+ 
+         .like-section button,
+         .comments-container button {
+             font-size: 1em;
+         }
+     </style>
+      <style>
+        /* Fuente y estilos generales */
+        body {
+            font-family: 'Dancing Script', cursive;
+        }
+        button, textarea, input, label, h1, p {
+            font-family: 'Dancing Script', cursive;
+        }
+        #uploadForm label {
+            font-size: 1.2em;
+        }
+        button {
+            font-size: 1em;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        .like-section button, .comments-container button {
+            font-size: 1em;
+        }
+
+        /* Estilos de la galería */
+        #galeria {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top:30px;
+        }
+
+        .publicacion {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 100%; /* Ancho completo del contenedor */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Ajuste para mostrar imágenes y videos en tamaño completo */
+        .publicacion img, .publicacion video {
+            width: auto; /* Permite que la imagen conserve su tamaño original */
+            max-width: none; /* Evita que se ajuste al ancho del contenedor */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subir una nueva publicación</h1>
+    <form id="uploadForm">
+        <label for="media">Selecciona una imagen o video:</label>
+        <input type="file" id="media" accept="image/*,video/*" required><br><br>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" placeholder="Escribe algo..." required></textarea><br><br>
+
+        <button type="submit">Publicar</button>
+    </form>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const mediaFile = document.getElementById('media').files[0];
+            const description = document.getElementById('description').value;
+
+            if (!mediaFile) {
+                alert('Por favor, selecciona una imagen o video.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const mediaURL = e.target.result;
+
+                // Crear objeto de la publicación
+                const post = {
+                    media: mediaURL,
+                    description: description,
+                    type: mediaFile.type,
+                    likes: 0,
+                    comments: []
+                };
+
+                // Obtener publicaciones previas desde localStorage
+                const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+                storedPosts.push(post);
+
+                // Guardar las publicaciones actualizadas en localStorage
+                localStorage.setItem('posts', JSON.stringify(storedPosts));
+
+                // Redirigir a la página principal
+                window.location.href = './perfil.html'; // Cambia 'perfil.html' a la ruta de tu página principal
+            };
+
+            reader.readAsDataURL(mediaFile);
+        });
+    </script>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const mediaFile = document.getElementById('media').files[0];
+    const description = document.getElementById('description').value;
+
+    if (!mediaFile) {
+        alert('Por favor, selecciona una imagen o video.');
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const mediaURL = e.target.result;
+
+        // Crear la estructura de la publicación
+        const newPost = document.createElement('div');
+        newPost.classList.add('publicacion');
+
+        // Detectar si es imagen o video
+        let mediaElement;
+        if (mediaFile.type.startsWith('image/')) {
+            mediaElement = document.createElement('img');
+        } else if (mediaFile.type.startsWith('video/')) {
+            mediaElement = document.createElement('video');
+            mediaElement.controls = true;
+        }
+
+        mediaElement.src = mediaURL;
+
+        newPost.innerHTML = `
+            <p>${description}</p>
+            <div class="like-section">
+                <button class="like-button">❤️</button>
+                <span class="like-count">0 Me gusta</span>
+                <button class="comment-button">💬 Comentarios</button>
+            </div>
+            <div class="comments-container">
+                <textarea placeholder="Escribe un comentario..."></textarea>
+                <button class="submit-comment">Enviar</button>
+            </div>
+        `;
+        
+        // Insertar el media (imagen/video) en la publicación
+        newPost.insertBefore(mediaElement, newPost.firstChild);
+
+        // Agregar la nueva publicación a la galería
+        document.getElementById('galeria').appendChild(newPost);
+
+        // Resetear el formulario
+        document.getElementById('uploadForm').reset();
+
+        // Añadir funcionalidades a la nueva publicación
+        addLikeAndCommentFunctionality(newPost);
+
+        // Redirigir a la página principal
+        window.location.href = './perfil.html';// Cambia 'perfil.html' por la página principal a la que deseas redirigir
+    }; 
+
+    reader.readAsDataURL(mediaFile);
+});
+
+    </script>
+</body>
+</html>

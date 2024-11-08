@@ -1,0 +1,236 @@
+body {
+    background-image: url('https://i.pinimg.com/originals/70/0c/eb/700ceb9778362125ead9739502a63638.gif');
+    background-size: cover;
+    /* Ajusta según tus necesidades */
+    margin: 0;
+    /* Elimina márgenes por defecto */
+    background-size: 690px 600px;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+}
+
+
+h4 {
+    font-size: 2em;
+    /* Tamaño de fuente (puedes ajustarlo) */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco con un poco de transparencia */
+    border-radius: 30px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.356);
+    /* Sombra del recuadro */
+    text-align: center;
+    /* Centra el texto dentro del recuadro */
+    color: #373737;
+    /* Color del texto */
+    margin: 0;
+    /* Elimina márgenes del encabezado */
+    color: #000000;
+    font-size: 40px
+}
+
+
+h3 {
+    color: #181818;
+
+}
+
+
+h2 {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco con un poco de transparencia */
+    border-radius: 30px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra del recuadro */
+    text-align: center;
+    /* Centra el texto dentro del recuadro */
+    color: #ffffff;
+    /* Color del texto */
+    margin: 0;
+    /* Elimina márgenes del encabezado */
+    color: #000000;
+    font-size: 45px
+}
+
+
+p {
+    color: #000000;
+font-size: 25px;
+
+}
+
+span {
+    color: #ffffff;
+}
+
+h5 {
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+.neon {
+    color: #fffb00;
+    /* Color del texto (verde neón) */
+    text-shadow:
+        0 0 5px #000000;
+    /* Brillo interno */
+    font-weight: bold;
+    /* Negrita para resaltar más */
+}
+
+
+
+.recuadro {
+    border: 2px solid #e2f2ff;
+    /* Color del borde */
+    padding: 10px;
+    /* Espacio interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    background-color: rgb(0, 0, 0);
+    /* Fondo con un poco de color */
+    text-align: center;
+    /* Centrar el texto */
+}
+
+
+.recuadro {
+    border: 2px solid #ffffff;
+    /* Color del borde */
+    padding: 0px;
+    /* Espacio interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    background-color: rgb(0, 0, 0);
+    /* Fondo con un poco de color */
+    text-align: center;
+    /* Centrar el texto */
+    margin: 20px;
+    /* Margen alrededor del recuadro */
+}
+
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #000000b0;
+    background-clip: padding-box;
+}
+
+
+:root {
+    --bs-body-bg: #000000e8;
+    --bs-secondary-bg: #ff000020;
+    --bs-tertiary-bg: #ff38:var(--bs-secondary-bg);
+    --bs-body-color: #ffffff;
+    --bs-secondary-color: rgb(255, 255, 255);
+    --bs-link-hover-color: rgb(255, 255, 255);
+
+}
+
+
+
+.editar-publicacion-btn  {
+    text-decoration: none; /* Quita el subrayado */
+    color: black; /* Cambia el color del texto a negro */
+    font-size: 19px;
+}
+
+
+.eliminar-publicacion-btn {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+}
+
+.responder-btn {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+}
+
+.descargar-btn {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+}
+
+.compartir-btn {
+    text-decoration: none;
+    color: #000000;
+    font-size: 19px;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.banner {
+    padding: 1px 20px;
+    height: 90px;
+}
+
+span {
+    color: #000000;
+    font-size: 20px;
+}
+
+.footer {
+    display: flex;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    margin: 0;
+
+justify-content: center;
+align-items: center;
+width: 100%;
+padding: 10px;
+background-color: #ffffff;
+box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-btn {
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+}
+
+.footer-btn i {
+    margin-right: 5px;
+}
+
+.footer-btn:hover {
+    background-color: #444;
+}
+
+.margin-content {
+    padding-bottom: 60px;
+}
+
+

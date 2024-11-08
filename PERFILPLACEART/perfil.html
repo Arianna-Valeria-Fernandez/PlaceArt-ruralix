@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/100/add-user-group-man-man--v2.png" />
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfil.css">
+    <title>Perfil de placeart</title>
+    <style>
+             /* Aplica la fuente Dancing Script al cuerpo de toda la página */
+             body {
+            font-family: 'Dancing Script', cursive;
+        }
+        /* Asegúrate de que botones y otros elementos mantengan la misma fuente */
+        button, textarea, span, span, div, h1, span {
+             font-family: 'Dancing Script', cursive;
+         }
+        body {
+            font-family: 'Dancing Script', cursive;
+        }
+        button, textarea, span, div, h1 {
+            font-family: 'Dancing Script', cursive;
+        }
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: auto;
+        }
+        .galeria {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .publicacion {
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #aa7c7c;
+            box-shadow: 0 4px 8px rgba(107, 30, 30, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .publicacion:hover {
+            transform: scale(1.02);
+        }
+        .publicacion img, .publicacion video {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .like-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            resize: none;
+        }
+        button {
+            font-size: 14px;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+        .comments-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .comment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .comment p {
+            margin: 0;
+            flex: 1;
+        }
+        .comment-actions {
+            display: flex;
+            align-items: center;
+        }
+        .comment-like {
+            cursor: pointer;
+            margin-right: 10px;
+            color: #888;
+        }
+        .comment-like.liked {
+            color: #e74c3c;
+        }
+        .delete-comment {
+            cursor: pointer;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+  <!-- Botón de volver -->
+  <div style="position: absolute; top: 10px; left: 10px;">
+    <a href="../inicio-placeart/html/prueba.html">
+        <img src="https://img.icons8.com/ios-filled/50/000000/left.png" alt="Volver" style="width: 40px; height: 40px;">
+    </a>
+</div>
+
+    
+    <div class="profile-container">
+        <header class="profile-header">
+            <div class="profile-picture">
+                <img id="displayProfilePic" src="./img/amados.jpg" alt="Profile Picture">
+            </div>  
+            <div class="profile-info">
+                <p><strong></strong> <span id="displayUsername"></span></p>
+                <div class="profile-details">
+                    <span class="posts">0 Publicaciones</span>
+                    <span class="followers">0 Seguidores</span>
+                    <span class="following">0 Seguidos</span>
+                </div>
+                <div class="profile-buttons">
+                    <a href="./editar_perfil.html"><button>Editar perfil</button></a>
+                    <a href="./publicacion.html"><button>Subir publicación</button></a>
+                </div>
+            </div>
+        </header>
+        <center><h2>Información del usuario</h2></center>
+        <div class="center-box">
+            <p><strong>Nombre:</strong> <span id="displayName">No disponible</span></p>
+            <p><strong>Pronombre:</strong> <span id="displayPronouns">No disponible</span></p>
+            <p><strong>Presentación:</strong> <span id="displayBio">No disponible</span></p>
+            <p><strong>Género:</strong> <span id="displayGender">No disponible</span></p>
+            <p><strong>Género Musical:</strong> <span id="displayMusic">No disponible</span></p>
+        </div>
+        <h1>Publicaciones</h1>
+        <div id="galeria" class="galeria"></div>
+    </div>
+
+    <script>
+        function loadPosts() {
+            const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            const galeria = document.getElementById('galeria');
+            galeria.innerHTML = '';
+
+            storedPosts.forEach((post, index) => {
+                const newPost = document.createElement('div');
+                newPost.classList.add('publicacion');
+
+                let mediaElement;
+                if (post.type.startsWith('image/')) {
+                    mediaElement = document.createElement('img');
+                } else if (post.type.startsWith('video/')) {
+                    mediaElement = document.createElement('video');
+                    mediaElement.controls = true;
+                }
+                mediaElement.src = post.media;
+
+                newPost.innerHTML = `
+                    <p>${post.description}</p>
+                    <div class="like-section">
+                        <button class="like-button">❤️</button>
+                        <span class="like-count">${post.likes} Me gusta</span>
+                        <button class="comment-button">💬 Comentarios</button>
+                        <button class="delete-button">🗑️ Eliminar</button>
+                    </div>
+                    <div class="comments-container">
+                        <textarea class="comment-input" placeholder="Escribe un comentario..."></textarea>
+                        <button class="submit-comment">Enviar</button>
+                        <div class="comment-list"></div>
+                    </div>
+                `;
+                newPost.insertBefore(mediaElement, newPost.firstChild);
+                galeria.appendChild(newPost);
+
+                addLikeAndCommentFunctionality(newPost, index);
+                addDeleteFunctionality(newPost, index);
+            });
+            updateCounters();
+        }
+
+        function addLikeAndCommentFunctionality(postElement, postIndex) {
+            const likeButton = postElement.querySelector('.like-button');
+            const likeCount = postElement.querySelector('.like-count');
+            const commentButton = postElement.querySelector('.comment-button');
+            const commentSection = postElement.querySelector('.comments-container');
+            const commentInput = postElement.querySelector('.comment-input');
+            const commentList = postElement.querySelector('.comment-list');
+
+            const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            const comments = storedPosts[postIndex].comments || [];
+            comments.forEach((comment) => {
+                const commentElement = document.createElement('p');
+                commentElement.textContent = comment;
+                commentList.appendChild(commentElement);
+            });
+
+            likeButton.addEventListener('click', () => {
+                storedPosts[postIndex].liked = !storedPosts[postIndex].liked;
+                if (storedPosts[postIndex].liked) {
+                    storedPosts[postIndex].likes++;
+                    likeButton.classList.add('liked');
+                } else {
+                    storedPosts[postIndex].likes--;
+                    likeButton.classList.remove('liked');
+                }
+                localStorage.setItem('posts', JSON.stringify(storedPosts));
+                likeCount.textContent = `${storedPosts[postIndex].likes} Me gusta`;
+            });
+
+            commentButton.addEventListener('click', () => {
+                commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+            });
+
+            postElement.querySelector('.submit-comment').addEventListener('click', () => {
+                const commentText = commentInput.value.trim();
+                if (commentText) {
+                    comments.push(commentText);
+                    storedPosts[postIndex].comments = comments;
+                    localStorage.setItem('posts', JSON.stringify(storedPosts));
+
+                    const commentElement = document.createElement('p');
+                    commentElement.textContent = commentText;
+                    commentList.appendChild(commentElement);
+                    commentInput.value = '';
+                }
+            });
+        }
+
+        function addDeleteFunctionality(postElement, postIndex) {
+            const deleteButton = postElement.querySelector('.delete-button');
+            deleteButton.addEventListener('click', () => {
+                const confirmDelete = confirm('¿Estás seguro de que deseas eliminar esta publicación?');
+                if (confirmDelete) {
+                    const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+                    storedPosts.splice(postIndex, 1);
+                    localStorage.setItem('posts', JSON.stringify(storedPosts));
+                    loadPosts();
+                }
+            });
+        }
+
+        function updateCounters() {
+            const postsCounter = document.querySelector('.posts');
+            const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            postsCounter.textContent = `${storedPosts.length} Publicaciones`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadPosts);
+        // Asegúrate de que el nombre de usuario esté cargado al abrir la página
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtenemos el nombre de usuario almacenado en localStorage
+    const storedUsername = localStorage.getItem('username') || 'No disponible';
+    // Insertamos el nombre en el elemento displayUsername
+    document.getElementById('displayUsername').textContent = storedUsername;
+
+    // Llamada a la función para cargar publicaciones
+    loadPosts();
+}); 
+document.addEventListener('DOMContentLoaded', () => {
+    // Recupera los datos de perfil almacenados en localStorage
+    const storedUsername = localStorage.getItem('username') || 'No disponible';
+    const storedName = localStorage.getItem('name') || 'No disponible';
+    const storedPronouns = localStorage.getItem('pronouns') || 'No disponible';
+    const storedBio = localStorage.getItem('bio') || 'No disponible';
+    const storedGender = localStorage.getItem('gender') || 'No disponible';
+    const storedMusic = localStorage.getItem('music') || 'No disponible';
+
+    // Asigna estos valores a los elementos correspondientes en la página
+    document.getElementById('displayUsername').textContent = storedUsername;
+    document.getElementById('displayName').textContent = storedName;
+    document.getElementById('displayPronouns').textContent = storedPronouns;
+    document.getElementById('displayBio').textContent = storedBio;
+    document.getElementById('displayGender').textContent = storedGender;
+    document.getElementById('displayMusic').textContent = storedMusic;
+
+    // Cargar publicaciones
+    loadPosts();
+});
+
+
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Cargar datos de perfil
+        const storedUsername = localStorage.getItem('username') || 'No disponible';
+        const storedName = localStorage.getItem('name') || 'No disponible';
+        const storedPronouns = localStorage.getItem('pronouns') || 'No disponible';
+        const storedBio = localStorage.getItem('bio') || 'No disponible';
+        const storedGender = localStorage.getItem('gender') || 'No disponible';
+        const storedMusic = localStorage.getItem('music') || 'No disponible';
+        const storedProfilePic = localStorage.getItem('profilePic');
+
+        // Asigna estos valores a los elementos correspondientes en la página
+        document.getElementById('displayUsername').textContent = storedUsername;
+        document.getElementById('displayName').textContent = storedName;
+        document.getElementById('displayPronouns').textContent = storedPronouns;
+        document.getElementById('displayBio').textContent = storedBio;
+        document.getElementById('displayGender').textContent = storedGender;
+        document.getElementById('displayMusic').textContent = storedMusic;
+
+        // Cargar imagen de perfil si existe
+        if (storedProfilePic) {
+            document.getElementById('displayProfilePic').src = storedProfilePic;
+        }
+
+        // Cargar publicaciones
+        loadPosts();
+    });
+</script>
+</body>
+<!-- Contenido HTML existente aquí -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</html>

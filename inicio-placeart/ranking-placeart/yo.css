@@ -1,0 +1,260 @@
+* { 
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh; /* Ocupar toda la altura de la ventana */
+  background-color: rgb(0, 0, 0);
+  display: flex; /* Cambiar a flex para centrar el contenido */
+  justify-content: center;
+  align-items: center; /* Centra verticalmente */
+  overflow-x: auto; /* Habilita el desplazamiento horizontal */
+}
+
+.banner {
+  background-color: #ffffff; /* Fondo blanco */
+  color: rgb(0, 0, 0); /* Texto negro */
+  padding: 10px 20px; /* Espaciado interno */
+  display: flex;
+  justify-content: space-between; /* Para separar el logo y el botón */
+  align-items: center; /* Centrar verticalmente */
+  position: fixed; /* Fijar en la parte superior */
+  width: 100%; /* Ancho completo */
+  top: 0;
+  z-index: 1000; /* Asegurarse de que esté por encima del contenido */
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limitar el ancho */
+  margin: 0 auto; /* Centrar en la pantalla */
+}
+
+
+.tite-baner {
+  display: flex;
+  justify-content: center; /* Para separar el logo y el botón */
+  align-items: center; /* Centrar verticalmente */
+  position: fixed; /* Fijar en la parte superior */
+  width: 90%; /* Ancho completo */
+  margin: 0; /* Elimina márgenes */
+  font-size: 4rem; /* Ajusta el tamaño del texto si es necesario */
+
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+
+  color: rgb(40, 4, 61);
+  
+}
+
+.banner-logo {
+  width: 23%; /* Ocupa parte del ancho del banner */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.profile-container {
+  display: flex; /* Para alinear la imagen y la lista */
+  align-items: center; /* Centra verticalmente */
+  margin-left: auto; /* Empuja este contenedor hacia la derecha */
+}
+
+.profile-image {
+  width: 50px; /* Tamaño de la imagen de perfil */
+  height: auto; /* Mantiene la proporción */
+  margin-left: 20px; /* Espaciado a la izquierda */
+}
+
+.tite, .leter {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubbles {
+  position: center;
+  display: flex;
+}
+
+.bubbles > span {
+  position: center;
+  width: 199px;
+  height: 100px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44, 
+              0 0 50px #4fc3dc,
+              0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #46143344,
+              0 0 50px #ff2d75,
+              0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+  0% {
+      transform: translateY(100vh) scale(0);
+  }
+  100% {
+      transform: translateY(-10vh) scale(1);
+  }
+}
+
+.titulo {
+  position: absolute; /* Para posicionarlo sobre el fondo */
+  top: 50%; /* Centrar verticalmente */
+  left: 0; /* Alinear al lado izquierdo */
+  transform: translateY(-50%); /* Ajuste de centrado vertical */
+  z-index: 5; /* Asegurarse de que esté debajo del overlay */
+  color: white; /* Cambia el color según tu diseño */
+  text-align: center; /* Centrar el texto horizontalmente */
+  font-size: 36px; /* Aumentar el tamaño de fuente */
+  padding: 20px; /* Espaciado alrededor */
+}
+
+
+
+
+.overlay {
+  position: absolute; /* Posiciona sobre el fondo */
+    top: 50%; /* Centrar verticalmente */
+    right: 0; /* Alinear al lado derecho */
+    transform: translateY(-50%); /* Ajustar para centrar verticalmente */
+    z-index: 10; /* Debe estar por encima del título */
+    /* Resto de tus estilos... */
+  color: white; /* Cambia el color según tu diseño */
+  width: 700px; /* Ajusta el ancho deseado */
+  height: 100%; /* Ocupar más espacio verticalmente */
+  padding: 20px; /* Espaciado interno */
+
+  border-radius: 10px; /* Bordes redondeados */
+  overflow-x: auto; /* Permitir desplazamiento horizontal si el contenido es demasiado largo */
+  display: flex; /* Para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.contentList {
+  display: flex; /* Alinear las cajas horizontalmente */
+  justify-content: center; /* Centrar en el contenedor */
+  align-items: flex-start; /* Alinear verticalmente al inicio */
+  flex-direction: row; /* Asegurar que estén en una fila */
+  white-space: nowrap; /* Evitar que se envuelvan */
+}
+
+.layerlist {
+  margin: 10px; /* Espacio entre las cajas */
+  background-color: rgba(255, 255, 255, 0.2); /* Color de fondo de las cajas */
+  border: 1px solid #cccccc69; /* Borde opcional */
+  border-radius: 9px; /* Bordes redondeados */
+  padding: 10px; /* Espacio interno */
+  box-shadow: 0 2px 5px rgba(165, 137, 137, 0.1); /* Sombra opcional */
+  transition: transform 0.4s ease; /* Animación suave */
+  min-width: 150px; /* Ajustar el ancho mínimo de las cajas */
+}
+
+.layerlist:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+
+.layerlist > img {
+  width: 100px; /* Ajusta el tamaño deseado */
+  height: 100px; /* Ajusta el tamaño deseado */
+  object-fit: cover; /* Mantiene la relación de aspecto */
+}
+
+h2 {
+  font-size: 52px;
+  border-bottom: 3px solid rgb(187, 16, 16);
+  width: 50%;
+  color: #ffffff;
+}
+
+.songsDetails {
+  padding: 24px 10px; /* Espaciado superior e inferior */
+}
+
+h3 {
+  font-size: 24px;
+  color: #e8a8fc;
+}
+
+h4 {
+  font-size: 18px;
+  color: #e7e5e5;
+}
+
+.optionslist {
+  padding-top: 24px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.optionslist img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer con botones de iconos */
+.footer {
+  display: flex;
+  background-color: #faf1f1;
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Align to left */
+  z-index: 1000; /* Ensure it’s above content */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1px;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-btn {
+  background-color: #ffffff;
+  color: black; /* Change color for visibility */
+  border: none;
+  padding: 0px 25px;
+  margin: 10px; /* Space between buttons */
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center; /* Center icon and text */
+}
+
+.footer-btn i {
+  margin-right: 5px;
+}
+
+.footer-btn:hover {
+  background-color: #444;
+}
+
+/* Añadimos margen inferior al contenido para evitar que el footer lo tape */
+.main-content {
+  padding-bottom: 100px;
+}

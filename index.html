@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demostración de Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body class="bg-light">
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center me-4" style="width: 500px;">
+            <!-- Mensaje de bienvenida -->
+            <h1 class="mb-3 text-border">¡Bienvenido, creador! Ingresa a tu cuenta y descubre un mundo de inspiración. ¡Tu aventura comienza aquí!</h1>
+
+            <div class="login-container mb-4 p-4 border rounded shadow" style="background-color: rgba(255, 255, 255, 0.5);">
+
+                <form id="login-form">
+
+                    <div class="mb-3 text-start">
+                        <input type="email" id="username" name="username" class="form-control" placeholder="Correo electrónico:" required>
+                    </div>
+
+                    <div class="mb-3 text-start">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña:" required>
+                    </div>
+                    
+                    <div class="d-flex justify-content-start mt-3">
+                        <button type="button" class="btn btn-secondary" style="background-color: orange; border-color: rgb(161, 116, 31); width: 100%;" onclick="iniciarSesion()">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </form>
+
+                <p id="message" class="mt-2"></p>
+                <p class="mt-3">¿No tienes cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Regístrate</a></p>
+
+                <div class="mt-3 mb-3">
+                    <span>o</span>
+                    <br>
+                    <span>Inicia sesión con:</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button id="google" class="btn btn-outline-danger" style="width: 48%;">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button class="btn btn-outline-primary" style="width: 48%;">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-dark" data-bs-ride="carousel" style="width: 100%; max-width: 500px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://i.pinimg.com/originals/5a/3b/10/5a3b10e32cc3be488761a594c4483c35.gif" class="d-block w-100 carousel-image" alt="monalisa">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/originals/75/d9/8b/75d98b94b94a0f000aa714e11e6298aa.gif" class="d-block w-100 carousel-image" alt="vince vango">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/originals/d4/3d/49/d43d49a8dea4f4d885553f09d9109441.gif" class="d-block w-100 carousel-image" alt="frida calo">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://media.tenor.com/iUzXsne2k_YAAAAM/%C3%BCdv%C3%B6z%C3%B6llek.gif" class="d-block w-100 carousel-image" alt="asmodea">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://giffiles.alphacoders.com/218/218087.gif" class="d-block w-100 carousel-image" alt="edgar allan poe">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/originals/97/1a/48/971a486482956608357f7ed5b72cef4d.gif" class="d-block w-100 carousel-image" alt="Rokero">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/originals/94/b8/de/94b8ded51c7d488b9a2d9a7819d72bcb.gif" class="d-block w-100 carousel-image" alt="nota musical">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://transformtheworldartistically.wordpress.com/wp-content/uploads/2013/08/tumblr_ly4j7cegpc1qbdq9so1_r1_500.gif?w=620" class="d-block w-100 carousel-image" alt="teatro">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="crearCuentaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="crearCuentaModalLabel">Crear Cuenta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="fw-bold">"¡Únete a nuestra comunidad de creadores! Regístrate y comparte tu arte, inspira a otros y deja tu huella en el mundo. ¡Tu creatividad puede encender la imaginación de alguien más!"</p>
+
+                <div class="mb-3">
+                    <input type="email" id="new-email" name="new-email" class="form-control" placeholder="Correo electrónico:" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" id="new-password" name="new-password" class="form-control" placeholder="Contraseña" required>
+                </div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="crearCuenta()">Crear cuenta</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="./assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+.profile-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #47464618;
+    border: 1px solid #615f5f2f;
+}
+.profile-header {
+    display: flex;
+    padding: 20px;
+}
+.profile-picture img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #dbdbdb;
+}
+.profile-info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.profile-username {
+    font-size: 24px;
+    font-weight: bold;
+}
+.profile-details {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.profile-details span {
+    font-size: 14px;
+    color: #1a1818;
+}
+.profile-buttons {
+    margin-top: 10px;
+}
+.profile-buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #0095f6;
+    border: none;
+    border-radius: 4px;
+    color: #0f0101;
+    cursor: pointer;
+}
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.highlight img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.highlight p {
+    text-align: center;
+    font-size: 12px;
+    color: #181717;
+}
+.suggestions {
+    padding: 20px;
+}
+.suggestion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.suggestion img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.suggestion p {
+    margin-left: 10px;
+    font-size: 14px;
+}
+.suggestion button {
+    margin-left: auto;
+    background-color: #0095f6;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px 15px;
+    background-color: #382fbb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #9b9cfc;
+}
+p {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.perfil {
+    text-align: center;
+}
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9f9f9;
+    border: 1px solid #bd8a8a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+.stat {
+    text-align: center;
+}
+.stat h2 {
+    margin: 0;
+    font-size: 2em;
+}
+.stat p {
+    margin: 0;
+    font-size: 1em;
+    color: #faf5f5;
+}
+.like-section {
+    display: flex;
+    align-items: center;
+}
+.like-button, .comment-button, .share-button {
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #333;
+}
+.like-button:hover, .comment-button:hover, .share-button:hover {
+    color: #007BFF;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #141313;
+    margin: 0;
+    padding: 0;
+}
+.profile-editor {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #646b6900;
+    border-radius: 10px;
+}
+.header h1 {
+    text-align: center;
+}
+button {
+    background-color: rgb(131, 131, 253);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: rgb(149, 149, 233);
+}
+.form-group {
+    margin-bottom: 15px;
+    /* Clase para centrar texto */
+        text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="url"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    background-color: #b9f7e2;
+    border: none;
+    color: #131212;
+    border-radius: 5px;
+}
+input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 2px solid #00f;
+}
+textarea {
+    height: 60px;
+}
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #186fcc;
+}
+.profile-info p {
+    background-color: #7776762c; /* Color de fondo del cajón */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado entre cajones */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    color: #110f0f; /* Color del texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+.profile-info strong {
+    color: #007bff; /* Color del texto en negrita */
+    font-weight: bold; /* Negrita */
+} 
+/* Contenedor principal de la galería */
+.galeria {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten si hay más de uno */
+    gap: 30px; /* Espaciado entre publicaciones */
+}
+/* Estilo para cada publicación */
+.publicacion {
+    max-width: 600px; /* Tamaño máximo para mantener la proporción */
+    width: 100%; /* Adaptarse al ancho disponible */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg,  #3358fdda, #7b84fe); /* Ajusta los colores como prefieras */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center; /* Centrar el texto y contenido */
+}
+/* Animación en hover */
+.publicacion:hover {
+    transform: scale(1.02);
+}
+/* Estilo para las imágenes dentro de las publicaciones */
+.publicacion img,
+.publicacion video {
+    width: 100%;
+    max-height: 400px; /* Limitar la altura para evitar imágenes demasiado grandes */
+    object-fit: cover; /* Asegurar que la imagen o video mantengan proporciones */
+    border-radius: 8px;
+}
+/* Estilo para la sección de likes y comentarios */
+.like-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+/* Comentarios ocultos hasta que se desplieguen */
+.comments-container {
+    margin-top: 10px;
+    display: none;
+}
+textarea {
+    width: 100%;
+    padding: 8px;
+    resize: none;
+}
+button {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+body {
+    background: linear-gradient(135deg, #4853e7, #eeea0b); /* Ejemplo de fondo degradado */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #6b37f8c7, #fef57b); /* Ajusta los colores como prefieras */
+    z-index: -1;
+}
+body {
+    font-family: 'Pacifico', cursive; /* Aplica a todo el documento */
+}
+.profile-info p, .profile-details span, h1 ,.galeria {
+    font-family: 'Pacifico', cursive; /* Aplica solo a elementos específicos */
+}
+h1 {
+    font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+/* styles.css */
+body {
+    font-family: 'Pacifico', cursive;
+}
+    /* Contenedor principal centrado */
+    .center-box {
+        max-width: 400px;  /* Ancho máximo de la caja */
+        margin: 0 auto;    /* Centrar horizontalmente */
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f7f7f700;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    /* Estilo para los elementos dentro de la caja */
+    .center-box p {
+        margin: 10px 0;
+        font-size: 1.2em; /* Ajustar el tamaño de fuente si es necesario */
+    }

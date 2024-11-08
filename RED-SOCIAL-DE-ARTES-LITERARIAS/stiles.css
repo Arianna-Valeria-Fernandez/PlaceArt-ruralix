@@ -1,0 +1,179 @@
+
+body {
+    background-image: url('https://i.pinimg.com/originals/29/cd/bd/29cdbdcc53da3e3c988ca9544fbfa03e.gif');
+    background-size: cover; /* Ajusta según tus necesidades */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; /* Elimina márgenes por defecto */
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+  
+}
+
+.editar-publicacion-btn  {
+    text-decoration: none; /* Quita el subrayado */
+    color: black; /* Cambia el color del texto a negro */
+    font-size: 19px;
+}
+
+
+.eliminar-publicacion-btn {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+}
+
+h4 {
+    color: #ffffff;
+    font-size: 30px;
+
+}
+
+h2 {
+    color: #fcf5f5;
+    font-size: 30px;
+}
+
+h3  {
+    color: #ffffff;
+}
+
+p {
+    color: #000000;
+    font-size: 24px;
+}
+
+span {
+    color: #000000;
+    font-size: 25px;
+}
+
+h5{
+color: #000000;
+     font-size: 25px;
+}
+
+
+
+.neon {
+    color: #000000e7; /* Color del texto (verde neón) */
+    text-shadow: 
+        0 0 5px #493636;  /* Brillo interno */
+    font-weight: bold; /* Negrita para resaltar más */
+}
+
+
+.recuadro {
+    border: 2px solid #e68c1663; /* Color del borde */
+    padding: 10px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: rgba(236, 236, 236, 0.712); /* Fondo con un poco de color */
+    text-align: center; /* Centrar el texto */
+}
+
+
+.recuadro {
+    padding: 0px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: rgba(100, 51, 23, 0.918); /* Fondo con un poco de color */
+    text-align: center; /* Centrar el texto */
+    margin: 20px; /* Margen alrededor del recuadro */
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.5;
+   -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #e0a16d6b;
+    background-clip: padding-box;
+    border: 2px solid #00000063;
+
+}
+:root{
+--bs-body-bg:rgba(207, 133, 73, 0.753);
+--bs-secondary-bg:#e0a16d6b;
+--bs-tertiary-bg:#e0a16d6b;
+
+
+}
+.responder-btn {
+    text-decoration: none; /* Quita el subrayado */
+    color: black; /* Cambia el color del texto a negro */
+    font-size: 19px;
+}
+
+.descargar-btn {
+    text-decoration: none; /* Quita el subrayado */
+    color: black; /* Cambia el color del texto a negro */
+    font-size:19px;
+}
+
+.compartir-btn {
+    text-decoration: none; /* Quita el subrayado */
+    color: black; /* Cambia el color del texto a negro */
+    font-size: 19px;
+}
+
+
+
+.footer {
+    position: fixed; /* Para que siempre esté en la parte inferior */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+ 
+  
+  /* Footer con botones de iconos */
+  .footer {
+    display: flex;
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Asegura que el footer esté sobre el contenido */
+    margin: 0; /* Sin márgenes para que estén pegados */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  .footer-btn {
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+  }
+  
+  .footer-btn i {
+    margin-right: 5px;
+  }
+  
+  .footer-btn:hover {
+    background-color:#444;
+  }
+  
+  /* Añadimos margen inferior al contenido para evitar que el footer lo tape */
+  .main-content {
+    padding-bottom: 60px;
+  }
+
+
+  
